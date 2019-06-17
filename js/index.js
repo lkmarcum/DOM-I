@@ -122,3 +122,28 @@ contactInfo[2].textContent = "sales@greatidea.io";
 
 const copyright = document.querySelector("footer p");
 copyright.textContent = "Copyright Great Idea! 2018";
+
+const darkTheme = document.createElement("button");
+darkTheme.textContent = "Dark Theme";
+const footer = document.querySelector("footer");
+footer.appendChild(darkTheme);
+
+darkTheme.style.cssText =
+  "background: white; padding: 10px; margin: 10px; font-size: 1rem; border: 1px solid black; border-radius: 5px";
+darkTheme.onclick = function() {
+  const body = document.querySelector("body");
+  body.style.background = "#3d3d29";
+  body.style.color = "white";
+  links.forEach(function(element) {
+    element.style.color = "white";
+    button.style.cssText =
+      "background: #3d3d29; color: white; border: 1px solid white";
+    darkTheme.style.cssText =
+      "background: #3d3d29; color: white; border: 1px solid white; padding: 10px; margin: 10px; font-size: 1rem; border-radius: 5px";
+    const main = document.querySelector(".main-content");
+    main.style.cssText =
+      "border-top: 2px solid white; border-bottom: 2px solid white";
+    logo.style.cssText =
+      "background: white; padding-left: 5px; padding-right: 5px; padding-top: 2px; padding-bottom: 2px; border-radius: 5px";
+  });
+};
