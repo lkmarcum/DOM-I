@@ -46,6 +46,14 @@ const siteContent = {
 const logo = document.getElementById("logo-img");
 logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
+const newFirstLink = document.createElement("a");
+const newLastLink = document.createElement("a");
+newLastLink.textContent = "I'm last!";
+
+const navLinks = document.querySelector("nav");
+navLinks.appendChild(newLastLink);
+navLinks.prepend(newFirstLink);
+
 const links = Array.from(document.querySelectorAll("header nav a"));
 links[0].textContent = "Services";
 links[1].textContent = "Product";
@@ -53,6 +61,11 @@ links[2].textContent = "Vision";
 links[3].textContent = "Features";
 links[4].textContent = "About";
 links[5].textContent = "Contact";
+links[6].textContent = "I'm second to last!";
+
+links.forEach(function(element) {
+  element.style.color = "green";
+});
 
 const h1 = document.querySelector("h1");
 h1.textContent = "DOM";
